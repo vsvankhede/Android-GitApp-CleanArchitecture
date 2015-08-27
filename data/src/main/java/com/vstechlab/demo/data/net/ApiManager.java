@@ -1,0 +1,25 @@
+package com.vstechlab.demo.data.net;
+
+import retrofit.RestAdapter;
+
+public class ApiManager {
+    private static final String BASE_URL = "https://api.github.com";
+    private static RestAdapter mRestAdapter;
+
+    private ApiManager() {}
+
+    public static RestAdapter getAdapter(){
+        if (null == mRestAdapter) {
+            createRestAdapter();
+        }
+        return mRestAdapter;
+    }
+
+    private static void createRestAdapter(){
+        mRestAdapter = new RestAdapter.Builder()
+                .setEndpoint(BASE_URL)
+                .setLogLevel(RestAdapter.LogLevel.FULL)
+                .build();
+    }
+
+}
