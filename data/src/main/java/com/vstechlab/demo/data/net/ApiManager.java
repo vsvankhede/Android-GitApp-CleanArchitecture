@@ -1,5 +1,7 @@
 package com.vstechlab.demo.data.net;
 
+import com.vstechlab.demo.data.net.api.UserApi;
+
 import retrofit.RestAdapter;
 
 public class ApiManager {
@@ -20,6 +22,7 @@ public class ApiManager {
                 .setEndpoint(BASE_URL)
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .build();
+
     }
 
 }
