@@ -4,11 +4,9 @@ import com.vstechlab.demo.data.net.api.UserApi;
 
 import retrofit.RestAdapter;
 
-public class ApiManager {
+public abstract class ApiManager {
     private static final String BASE_URL = "https://api.github.com";
     private static RestAdapter mRestAdapter;
-
-    private ApiManager() {}
 
     public static RestAdapter getAdapter(){
         if (null == mRestAdapter) {
@@ -22,7 +20,6 @@ public class ApiManager {
                 .setEndpoint(BASE_URL)
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .build();
-
     }
 
 }

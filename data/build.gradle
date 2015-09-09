@@ -44,6 +44,8 @@ android {
 dependencies {
     def dataDependencies = rootProject.ext.dataDependencies
 
+    compile project(':domain')
+
     apt dataDependencies.daggerCompiler
     provided dataDependencies.javaxAnnotation
     compile dataDependencies.dagger

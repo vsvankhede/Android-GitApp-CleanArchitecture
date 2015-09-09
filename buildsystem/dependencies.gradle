@@ -26,6 +26,28 @@ ext {
     retrofitVersion = '1.9.0'
     androidAnnotationsVersion = '20.0.0'
 
+    //Testing
+    robolectricVersion = '2.4'
+    jUnitVersion = '4.11'
+    mockitoVersion = '1.9.5'
+    dexmakerVersion = '1.0'
+    espressoVersion = '2.0'
+    testingSupportLibVersion = '0.1'
+
+
+    domainDependencies = [
+            daggerCompiler:     "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger:             "com.google.dagger:dagger:${daggerVersion}",
+            gson:               "com.google.code.gson:gson:${gsonVersion}",
+            javaxAnnotation:    "org.glassfish:javax.annotation:${javaxAnnotationVersion}",
+            rxJava:             "io.reactivex:rxjava:${rxJavaVersion}",
+    ]
+
+    domainTestDependencies = [
+            junit:              "junit:junit:${jUnitVersion}",
+            mockito:            "org.mockito:mockito-core:${mockitoVersion}",
+    ]
+
     dataDependencies = [
             daggerCompiler:     "com.google.dagger:dagger-compiler:${daggerVersion}",
             dagger:             "com.google.dagger:dagger:${daggerVersion}",

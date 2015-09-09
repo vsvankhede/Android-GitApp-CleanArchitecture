@@ -5,6 +5,7 @@ import com.vstechlab.demo.data.entity.Followers;
 import java.util.List;
 
 import retrofit.http.GET;
+import retrofit.http.Path;
 import rx.Observable;
 
 public interface UserApi {
@@ -14,6 +15,5 @@ public interface UserApi {
      * @return Observable for followers
      */
     @GET("/user/{username}/followers")
-    Observable<List<Followers>> getFollowers();
-
+    Observable<List<Followers>> getFollowers(@Path("username") String username);
 }
