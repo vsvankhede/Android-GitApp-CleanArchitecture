@@ -3,7 +3,7 @@ package com.vstechlab.demo.data.entity;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Followers {
+public class FollowersEntity {
     @Expose
     private String login;
     @Expose

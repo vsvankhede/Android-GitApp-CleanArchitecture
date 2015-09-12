@@ -1,6 +1,6 @@
 package com.vstechlab.demo.data.net.api;
 
-import com.vstechlab.demo.data.entity.Followers;
+import com.vstechlab.demo.data.entity.FollowersEntity;
 
 import java.util.List;
 
@@ -15,5 +15,5 @@ public interface UserApi {
      * @return Observable for followers
      */
     @GET("/user/{username}/followers")
-    Observable<List<Followers>> getFollowers(@Path("username") String username);
+    Observable<List<FollowersEntity>> getFollowers(@Path("username") String username);
 }

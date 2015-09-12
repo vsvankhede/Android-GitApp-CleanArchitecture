@@ -1,8 +1,11 @@
 package com.vstechlab.demo.data.net;
 
-import com.vstechlab.demo.data.net.api.UserApi;
+import com.vstechlab.demo.data.entity.FollowersEntity;
+
+import java.util.List;
 
 import retrofit.RestAdapter;
+import rx.Observable;
 
 public abstract class ApiManager {
     private static final String BASE_URL = "https://api.github.com";
@@ -21,5 +24,7 @@ public abstract class ApiManager {
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .build();
     }
+
+    public abstract Observable<List<FollowersEntity>> getFollowers(String username);
 
 }

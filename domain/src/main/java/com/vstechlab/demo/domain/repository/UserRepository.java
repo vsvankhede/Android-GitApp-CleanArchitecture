@@ -16,5 +16,5 @@ public interface UserRepository {
      *
      * @param username The username used to retrieve followers
      */
-    Observable<List<Followers>> getFollowers(String username);
+    Observable<List<Followers>> getUserFollowers(String username);
 }
