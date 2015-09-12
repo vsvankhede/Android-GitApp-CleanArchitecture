@@ -1,5 +1,19 @@
-apply plugin: 'com.android.application'
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'me.tatarka:gradle-retrolambda:3.1.0'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'com.android.library'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
     def globalConfiguration = rootProject.extensions.getByName("ext")
@@ -8,7 +22,6 @@ android {
     buildToolsVersion globalConfiguration.getAt("androidBuildToolsVersion")
 
     defaultConfig {
-        applicationId globalConfiguration.getAt("androidApplicationId")
         minSdkVersion globalConfiguration.getAt("androidMinSdkVersion")
         targetSdkVersion globalConfiguration.getAt("androidTargetSdkVersion")
         versionCode globalConfiguration.getAt("androidVersionCode")
@@ -16,9 +29,10 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -28,6 +42,17 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.0'
+    def dataDependencies = rootProject.ext.dataDependencies
+
+    compile project(':domain')
+
+    apt dataDependencies.daggerCompiler
+    provided dataDependencies.javaxAnnotation
+    compile dataDependencies.dagger
+    compile dataDependencies.okHttp
+    compile dataDependencies.gson
+    compile dataDependencies.rxJava
+    compile dataDependencies.rxAndroid
+    compile dataDependencies.retrofit
+    compile dataDependencies.androidAnnotations
 }
