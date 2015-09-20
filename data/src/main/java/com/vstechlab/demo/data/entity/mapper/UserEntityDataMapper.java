@@ -21,6 +21,11 @@ public class UserEntityDataMapper {
     public UserEntityDataMapper() {
     }
 
+    /**
+     * Transform {@link FollowersEntity} to {@link Followers}
+     *
+     * @param followersEntity Object tobe transformed
+     */
     public Followers transform(FollowersEntity followersEntity) {
         Followers followers = null;
         if (followersEntity != null) {
@@ -45,7 +50,10 @@ public class UserEntityDataMapper {
         return followers;
     }
 
-
+    /**
+     * Transform {@link FollowersEntity} list to {@link Followers} list
+     * @param followersEntitiesCollection Collation tobe transformed
+     */
     public List<Followers> transformFollower(Collection<FollowersEntity> followersEntitiesCollection){
         List<Followers> followersList  = new ArrayList<Followers>();
         Followers followers;

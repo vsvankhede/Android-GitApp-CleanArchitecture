@@ -3,9 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android-GitApp-CleanArchitecture.iml" filepath="$PROJECT_DIR$/Android-GitApp-CleanArchitecture.iml" />
+<<<<<<< Updated upstream
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/data/data.iml" filepath="$PROJECT_DIR$/data/data.iml" />
       <module fileurl="file://$PROJECT_DIR$/domain/domain.iml" filepath="$PROJECT_DIR$/domain/domain.iml" />
+=======
+>>>>>>> Stashed changes
     </modules>
   </component>
 </project>
